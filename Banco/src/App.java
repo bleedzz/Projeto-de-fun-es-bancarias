@@ -38,8 +38,12 @@ public class App {
             } else if (opcao == 2) {
                 System.out.println("Digite o valor que deseja sacar ");
                 valorOperacao = leitor.nextDouble();
-                saldo -= valorOperacao;
+                if (valorOperacao > saldo) {
+                    System.out.println("Não há saldo suficiente para sacar esse valor");
+                } else {
+                    saldo -= valorOperacao;
                 System.out.println("Seu saldo atual é: " + saldo);
+                }
             } else if (opcao == 3) {
                 System.out.println("Digite o valor que deseja depositar ");
                 valorOperacao = leitor.nextDouble();
